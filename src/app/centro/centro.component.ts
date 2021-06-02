@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CentroComponent implements OnInit {
 
-  centro: string="Gerencia de Atención Primaria";
+  @Input() centro: any;
 
   constructor() {
   }
