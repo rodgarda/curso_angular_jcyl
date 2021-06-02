@@ -8,8 +8,8 @@ import {SolicitudesService} from "../solicitudes.service";
 })
 export class SolicitudComponent implements OnInit {
   solicitudes: any;
-
   solicitud = {nombre: '', apellidos: ''};
+  centro = {nombre: ""};
 
   constructor() {
 
@@ -34,6 +34,11 @@ export class SolicitudComponent implements OnInit {
   apellidos($event: KeyboardEvent) {
     const element = $event.target as HTMLInputElement
     this.solicitud.apellidos = element.value;
+  }
+
+  recibeCentro(centroRec:any){
+    console.log(centroRec.nombre)
+    this.centro=centroRec;
   }
 
 

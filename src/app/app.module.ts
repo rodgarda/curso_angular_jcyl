@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SolicitudComponent } from './solicitud/solicitud.component';
 import { CentroComponent } from './centro/centro.component';
 import {HttpClientModule} from "@angular/common/http";
+import { SelectorCentroComponent } from './selector-centro/selector-centro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SolicitudComponent,
     CentroComponent,
+    SelectorCentroComponent,
   ],
   imports: [
     BrowserModule,
