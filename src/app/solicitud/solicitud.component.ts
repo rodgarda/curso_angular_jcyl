@@ -11,12 +11,8 @@ export class SolicitudComponent implements OnInit {
 
   solicitud = {nombre: '', apellidos: ''};
 
-  centro = {nombre: "Fernando de Rojas"};
+  constructor() {
 
-  constructor(private solicitudesService: SolicitudesService) {
-    solicitudesService.getSolicitudes().then(
-      x => this.solicitudes = x
-    )
   }
 
   ngOnInit(): void {
@@ -40,7 +36,5 @@ export class SolicitudComponent implements OnInit {
     this.solicitud.apellidos = element.value;
   }
 
-  borrarSolicitud(solicitud: any) {
-    this.solicitudes = this.solicitudes.filter((solicitudExistente: any) => solicitudExistente.nombre != solicitud.nombre)
-  }
+
 }

@@ -2,13 +2,12 @@ import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-centro',
-  template: `{{centro.nombre}}`,
+  template: `{{centro}}`,
   styleUrls: ['./centro.component.css']
 })
 export class CentroComponent implements OnInit {
 
-  @Input()
-  centro: any;
+  centro: string="Gerencia de Atención Primaria";
 
   constructor() {
   }
