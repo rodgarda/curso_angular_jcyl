@@ -7,7 +7,8 @@ import {SolicitudesService} from "../solicitudes.service";
   styleUrls: ['./solicitud.component.css']
 })
 export class SolicitudComponent implements OnInit {
-  solicitudes: any;
+  solicitudes =[{nombre: 'David', apellidos: 'Rodriguez',nacimiento: new Date('2013/10/27')},
+  {nombre: 'Raul', apellidos: 'Perez',nacimiento: new Date('2015/10/07')}];
   solicitud = {nombre: '', apellidos: ''};
   centro = {nombre: ""};
 

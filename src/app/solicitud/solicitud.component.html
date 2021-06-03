@@ -24,4 +24,17 @@
 
 <button (click)="enviar()" [style.color]="(solicitud?.nombre?.length || 0) < 3 ? 'red' : ''">Enviar</button>
 
-
+<br/>
+<br/>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellidos</th>
+    <th>F.Nacimiento</th>
+  </tr>
+  <tr *ngFor="let solicitud of solicitudes">
+    <td>{{solicitud.nombre}}</td>
+    <td>{{solicitud.apellidos}}</td>
+    <td>{{solicitud.nacimiento | date: 'dd/MM/YYYY'}}</td>
+  </tr>
+</table>
