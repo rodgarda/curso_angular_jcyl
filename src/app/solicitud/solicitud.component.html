@@ -1,8 +1,13 @@
 <h1>Nueva solicitud de comedor</h1>
-
+<br/>
 <h2>Solicitudes</h2>
+<br/>
+    <h2>Nombre  Apellidos   F.Nacimiento Acciones</h2>
 
-
+  <p *ngFor="let solicit of solicitudes">
+    <app-fila-solicitud [solicitudFila]="solicit" (solicitudBorrada)="borrarSolicitud(solicit)"></app-fila-solicitud>
+  </p>
+<br/>
 <h2>Centro</h2>
 
 <app-selector-centro (asignaCentro)="recibeCentro($event)"></app-selector-centro>
@@ -12,29 +17,13 @@
 <h2>Nueva solicitud</h2>
 
 <label>Nombre</label>
-<input (keyup)="nombre($event)">
+<input (keyup)="capturaInput($event, 'nombre')" [value]="solicitud.nombre">
 <div *ngIf="(solicitud?.nombre?.length || 0) < 3">
   Nombre demasiado corto
 </div>
 
 <label>Apellidos</label>
-<input (keyup)="apellidos($event)">
-
-
+<input (keyup)="capturaInput($event, 'apellidos')" [value]="solicitud.apellidos">
 
 <button (click)="enviar()" [style.color]="(solicitud?.nombre?.length || 0) < 3 ? 'red' : ''">Enviar</button>
 
-<br/>
-<br/>
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Apellidos</th>
-    <th>F.Nacimiento</th>
-  </tr>
-  <tr *ngFor="let solicitud of solicitudes">
-    <td>{{solicitud.nombre}}</td>
-    <td>{{solicitud.apellidos}}</td>
-    <td>{{solicitud.nacimiento | date: 'dd/MM/YYYY'}}</td>
-  </tr>
-</table>
