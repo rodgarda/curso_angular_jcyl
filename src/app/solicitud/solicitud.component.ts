@@ -1,3 +1,4 @@
+import { SolicitudesService } from './../solicitudes.service';
 import {Component, OnInit} from '@angular/core';
 
 
@@ -7,14 +8,14 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./solicitud.component.css']
 })
 export class SolicitudComponent implements OnInit {
-  solicitudes =[{nombre: 'David', apellidos: 'Rodriguez',nacimiento: new Date('2013/10/27')},
-  {nombre: 'Raul', apellidos: 'Perez',nacimiento: new Date('2015/10/07')}];
+  solicitudes:any=[];
   solicitud = {nombre: '', apellidos: '',nacimiento:new Date('1000/01/01')};
   centro = {nombre: ""};
 
-  constructor() {
+  constructor(private solicitudesService: SolicitudesService) {
+    this.solicitudes = solicitudesService.getSolicitudes();
+    }
 
-  }
 
   ngOnInit(): void {
   }
@@ -24,11 +25,10 @@ export class SolicitudComponent implements OnInit {
   }
 
   enviar() {
-    //this.solicitudes.push({nombre:this.solicitud.nombre,apellidos: this.solicitud.apellidos,nacimiento:new Date('1000/01/01')});
-    this.solicitudes.push(this.solicitud);
+    this.solicitudes.push({nombre:this.solicitud.nombre,apellidos: this.solicitud.apellidos,nacimiento:new Date('1000/01/01')});
+    //this.solicitudes.push(this.solicitud);
     this.solicitud.nombre="";
     this.solicitud.apellidos="";
-
   }
 
   capturaInput($event: KeyboardEvent,nombreInput:any) {
