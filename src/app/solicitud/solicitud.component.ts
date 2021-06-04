@@ -9,11 +9,15 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SolicitudComponent implements OnInit {
   solicitudes:any=[];
-  solicitud = {nombre: '', apellidos: '',nacimiento:new Date('1000/01/01')};
+  solicitud = {nombre: '', apellidos: '',nacimiento:new Date('1000/01/01'),ayuda:0,tipoSolicitud:'' };
   centro = {nombre: ""};
 
   constructor(private solicitudesService: SolicitudesService) {
-    this.solicitudes = solicitudesService.getSolicitudes();
+    solicitudesService.getSolicitudes()
+    .then( x =>{
+      this.solicitudes=x.items;
+      })
+
     }
 
 

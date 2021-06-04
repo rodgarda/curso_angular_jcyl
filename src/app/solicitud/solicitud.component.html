@@ -2,7 +2,7 @@
 <br/>
 <h2>Solicitudes</h2>
 <br/>
-    <h2>Nombre  Apellidos   F.Nacimiento Acciones</h2>
+    <h2>Nombre  Apellidos   F.Nacimiento Ayuda TipoSolicitud Acciones</h2>
 
   <p *ngFor="let solicit of solicitudes">
     <app-fila-solicitud [solicitudFila]="solicit" (solicitudBorrada)="borrarSolicitud(solicit)"></app-fila-solicitud>
@@ -25,5 +25,5 @@
 <label>Apellidos</label>
 <input (keyup)="capturaInput($event, 'apellidos')" [value]="solicitud.apellidos">
 
-<button (click)="enviar()" [style.color]="(solicitud?.nombre?.length || 0) < 3 ? 'red' : ''">Enviar</button>
+<button (click)="enviar()" [disabled]="(solicitud?.nombre?.length<3 || 0)">Enviar</button>
 
