@@ -14,7 +14,7 @@
         <th>Acciones</th>
       </tr>
     </thead>
-    <tr *ngFor="let solicit of solicitudes">
+    <tr *ngFor="let solicit of solicitudes$ |async">
         <app-fila-solicitud [solicitudFila]="solicit" (solicitudBorrada)="borrarSolicitud(solicit)"></app-fila-solicitud>
     </tr>
   </table>

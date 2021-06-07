@@ -8,16 +8,13 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./solicitud.component.css']
 })
 export class SolicitudComponent implements OnInit {
-  solicitudes:any=[];
+  solicitudes$:any=[];
+  //solicitudes:any=[];
   solicitud = {nombre: '', apellidos: '',nacimiento:new Date('1000/01/01'),ayuda:0,tipoSolicitud:'' };
   centro = {nombre: ""};
 
   constructor(private solicitudesService: SolicitudesService) {
-    solicitudesService.getSolicitudes()
-    .then( x =>{
-      this.solicitudes=x;
-      })
-
+    this.solicitudes$=solicitudesService.getSolicitudes()
     }
 
 
@@ -29,7 +26,7 @@ export class SolicitudComponent implements OnInit {
   }
 
   enviar() {
-    this.solicitudes.push({nombre:this.solicitud.nombre,apellidos: this.solicitud.apellidos,nacimiento:new Date('1000/01/01')});
+    //this.solicitudes.push({nombre:this.solicitud.nombre,apellidos: this.solicitud.apellidos,nacimiento:new Date('1000/01/01')});
     //this.solicitudes.push(Object.assign({},this.solicitud));
     //this.solicitudes.push({...this.solicitud})
 
@@ -49,8 +46,8 @@ export class SolicitudComponent implements OnInit {
   }
 
   borrarSolicitud(solicitud:any){
-      var i = this.solicitudes.indexOf( solicitud );
-      this.solicitudes.splice( i, 1 );
+      //var i = this.solicitudes.indexOf( solicitud );
+      //this.solicitudes.splice( i, 1 );
   }
 
 
