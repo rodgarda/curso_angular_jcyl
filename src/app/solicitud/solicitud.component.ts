@@ -15,7 +15,7 @@ export class SolicitudComponent implements OnInit {
   constructor(private solicitudesService: SolicitudesService) {
     solicitudesService.getSolicitudes()
     .then( x =>{
-      this.solicitudes=x.items;
+      this.solicitudes=x;
       })
 
     }
@@ -30,6 +30,9 @@ export class SolicitudComponent implements OnInit {
 
   enviar() {
     this.solicitudes.push({nombre:this.solicitud.nombre,apellidos: this.solicitud.apellidos,nacimiento:new Date('1000/01/01')});
+    //this.solicitudes.push(Object.assign({},this.solicitud));
+    //this.solicitudes.push({...this.solicitud})
+
     //this.solicitudes.push(this.solicitud);
     this.solicitud.nombre="";
     this.solicitud.apellidos="";

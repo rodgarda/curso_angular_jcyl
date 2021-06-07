@@ -3,10 +3,22 @@
 <h2>Solicitudes</h2>
 <br/>
     <h2>Nombre  Apellidos   F.Nacimiento Ayuda TipoSolicitud Acciones</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Nacimiento</th>
+        <th>Ayuda</th>
+        <th>TipoSolicitud</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let solicit of solicitudes">
+        <app-fila-solicitud [solicitudFila]="solicit" (solicitudBorrada)="borrarSolicitud(solicit)"></app-fila-solicitud>
+    </tr>
+  </table>
 
-  <p *ngFor="let solicit of solicitudes">
-    <app-fila-solicitud [solicitudFila]="solicit" (solicitudBorrada)="borrarSolicitud(solicit)"></app-fila-solicitud>
-  </p>
 <br/>
 <h2>Centro</h2>
 

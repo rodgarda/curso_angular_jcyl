@@ -9,10 +9,10 @@ export class SolicitudesService {
   {nombre: 'Raul', apellidos: 'Perez',nacimiento: new Date('2015/10/07')}];
   constructor(private  _http:HttpClient) { }
   getSolicitudes():any{
-    const accessToken = 'w553KmY_mhtkpRngkuh6qoYMPc-McVjwAjSNbQ0IxNs';
+    const accessToken = 'o8vlfcqXWB8344KCv5LruaXU9BKAmWWh0JRUbuNdgbA';
     return this._http.get(
     `https://cdn.contentful.com/spaces/im9x7su136k8/environments/master/entries?access_token=${accessToken}`)
-    .toPromise();
-
+    .toPromise()
+    .then((x: any) => x.items.map((y: any) => y.fields))
   }
 }
