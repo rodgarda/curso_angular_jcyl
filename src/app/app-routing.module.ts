@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { DatosBancariosComponent } from './datos-bancarios/datos-bancarios.component';
+=======
+>>>>>>> ef5ce845747bf5941838b1f24a56cacc1100ca7c
 import { ListadoCentrosComponent } from './listado-centros/listado-centros.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,7 +14,10 @@ const routes: Routes = [
  , component: SolicitudComponent},
   {path: 'solicitud', component: SolicitudComponent},
   {path: 'centros', component: ListadoCentrosComponent},
+<<<<<<< HEAD
   {path: 'banco', component: DatosBancariosComponent},
+=======
+>>>>>>> ef5ce845747bf5941838b1f24a56cacc1100ca7c
    {path: 'centros/:centroId', component: CentroDetalleComponent},
 ]
 
