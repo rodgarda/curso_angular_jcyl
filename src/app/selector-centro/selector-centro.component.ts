@@ -1,3 +1,4 @@
+import { CentrosService } from './../centros.service';
 import { Component, OnInit, Output ,EventEmitter} from '@angular/core';
 
 @Component({
@@ -6,18 +7,18 @@ import { Component, OnInit, Output ,EventEmitter} from '@angular/core';
   styleUrls: ['./selector-centro.component.css']
 })
 export class SelectorCentroComponent implements OnInit {
-  centros = [{nombre: "Fernando de Rojas"}, {nombre: "Agustinas"}];
+
   centrosFiltrados:any=[];
   centroSeleccionado={nombre:''};
   @Output() asignaCentro = new EventEmitter();
 
-  constructor() { }
+  constructor(private _centros:CentrosService) { }
 
   ngOnInit(): void {
   }
 
   centro($event: any):void{
-  this.centrosFiltrados = [...this.centros].filter(centro =>
+  this.centrosFiltrados = [...this._centros.getCentros()].filter(centro =>
     centro.nombre.toLocaleUpperCase().includes($event.target.value.toLocaleUpperCase()))
   }
 

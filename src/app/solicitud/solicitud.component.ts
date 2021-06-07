@@ -1,5 +1,6 @@
+import { SolicitudesService } from './../solicitudes.service';
 import {Component, OnInit} from '@angular/core';
-import {SolicitudesService} from "../solicitudes.service";
+
 
 @Component({
   selector: 'app-solicitud',
@@ -7,13 +8,15 @@ import {SolicitudesService} from "../solicitudes.service";
   styleUrls: ['./solicitud.component.css']
 })
 export class SolicitudComponent implements OnInit {
-  solicitudes: any;
-  solicitud = {nombre: '', apellidos: ''};
+  solicitudes$:any=[];
+  //solicitudes:any=[];
+  solicitud = {nombre: '', apellidos: '',nacimiento:new Date('1000/01/01'),ayuda:0,tipoSolicitud:'' };
   centro = {nombre: ""};
 
-  constructor() {
+  constructor(private solicitudesService: SolicitudesService) {
+    this.solicitudes$=solicitudesService.getSolicitudes()
+    }
 
-  }
 
   ngOnInit(): void {
   }
@@ -23,22 +26,28 @@ export class SolicitudComponent implements OnInit {
   }
 
   enviar() {
-    console.log(this.solicitud)
+    //this.solicitudes.push({nombre:this.solicitud.nombre,apellidos: this.solicitud.apellidos,nacimiento:new Date('1000/01/01')});
+    //this.solicitudes.push(Object.assign({},this.solicitud));
+    //this.solicitudes.push({...this.solicitud})
+
+    //this.solicitudes.push(this.solicitud);
+    this.solicitud.nombre="";
+    this.solicitud.apellidos="";
   }
 
-  nombre($event: KeyboardEvent) {
+  capturaInput($event: KeyboardEvent,nombreInput:any) {
     const element = $event.target as HTMLInputElement
-    this.solicitud.nombre = element.value;
-  }
-
-  apellidos($event: KeyboardEvent) {
-    const element = $event.target as HTMLInputElement
-    this.solicitud.apellidos = element.value;
+    this.solicitud[nombreInput] = element.value;
   }
 
   recibeCentro(centroRec:any){
-    console.log(centroRec.nombre)
+
     this.centro=centroRec;
+  }
+
+  borrarSolicitud(solicitud:any){
+      //var i = this.solicitudes.indexOf( solicitud );
+      //this.solicitudes.splice( i, 1 );
   }
 
 

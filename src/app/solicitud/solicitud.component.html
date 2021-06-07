@@ -1,27 +1,40 @@
 <h1>Nueva solicitud de comedor</h1>
-
+<br/>
 <h2>Solicitudes</h2>
+<br/>
+    <h2>Nombre  Apellidos   F.Nacimiento Ayuda TipoSolicitud Acciones</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Nacimiento</th>
+        <th>Ayuda</th>
+        <th>TipoSolicitud</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tr *ngFor="let solicit of solicitudes$ |async">
+        <app-fila-solicitud [solicitudFila]="solicit" (solicitudBorrada)="borrarSolicitud(solicit)"></app-fila-solicitud>
+    </tr>
+  </table>
 
-
+<br/>
 <h2>Centro</h2>
 
 <app-selector-centro (asignaCentro)="recibeCentro($event)"></app-selector-centro>
 
-<app-centro [centro]="centro"></app-centro>
-
+{{centro.nombre}}
 <h2>Nueva solicitud</h2>
 
 <label>Nombre</label>
-<input (keyup)="nombre($event)">
+<input (keyup)="capturaInput($event, 'nombre')" [value]="solicitud.nombre">
 <div *ngIf="(solicitud?.nombre?.length || 0) < 3">
   Nombre demasiado corto
 </div>
 
 <label>Apellidos</label>
-<input (keyup)="apellidos($event)">
+<input (keyup)="capturaInput($event, 'apellidos')" [value]="solicitud.apellidos">
 
-
-
-<button (click)="enviar()" [style.color]="(solicitud?.nombre?.length || 0) < 3 ? 'red' : ''">Enviar</button>
-
+<button (click)="enviar()" [disabled]="(solicitud?.nombre?.length<3 || 0)">Enviar</button>
 
