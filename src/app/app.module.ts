@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { SelectorCentroComponent } from './selector-centro/selector-centro.component';
 import { FilaSolicitudComponent } from './fila-solicitud/fila-solicitud.component';
 import { ListadoCentrosComponent } from './listado-centros/listado-centros.component';
+import { CentroDetalleComponent } from './centro-detalle/centro-detalle.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ListadoCentrosComponent } from './listado-centros/listado-centros.compo
     SelectorCentroComponent,
     FilaSolicitudComponent,
     ListadoCentrosComponent,
+    CentroDetalleComponent,
   ],
   imports: [
     BrowserModule,

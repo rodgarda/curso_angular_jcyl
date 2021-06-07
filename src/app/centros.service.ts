@@ -11,4 +11,7 @@ export class CentrosService {
   getCentros(){
     return this.centros;
   }
+  getCentro(centroId){
+    return this.centros.filter((x)=>x==centroId);
+  }
 }
