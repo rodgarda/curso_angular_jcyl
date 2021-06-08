@@ -1,9 +1,9 @@
 
   <form [formGroup]="f">
   <label>Pais</label>
-  <input  name="pais" placeholder="pais" required minlength="2" formControlName="pais">
+  <input  [(ngModel)]="pais" name="pais" placeholder="pais" required minlength="2" formControlName="pais">
   <label>IBAN</label>
-  <input  name="iban" placeholder="iban" required minlength="2" formControlName="iban">
+  <input  [(ngModel)]="iban" name="iban" placeholder="iban" required minlength="2" formControlName="iban">
   <label>Entidad</label>
   <input  name="entidad" placeholder="entidad" required minlength="2" formControlName="entidad">
   <label>Sucursal</label>
