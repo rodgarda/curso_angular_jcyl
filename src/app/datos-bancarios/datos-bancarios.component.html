@@ -1,16 +1,16 @@
 
   <form [formGroup]="f">
   <label>Pais</label>
-  <input  [(ngModel)]="pais" name="pais" placeholder="pais" required minlength="2" formControlName="pais">
+  <input  [(ngModel)]="pais" name="pais" placeholder="pais" formControlName="pais">
   <label>IBAN</label>
-  <input  [(ngModel)]="iban" name="iban" placeholder="iban" required minlength="2" formControlName="iban">
+  <input  [(ngModel)]="iban" name="iban" placeholder="iban"  formControlName="iban">
   <label>Entidad</label>
-  <input  name="entidad" placeholder="entidad" required minlength="2" formControlName="entidad">
+  <input  [(ngModel)]="entidad" name="entidad" placeholder="entidad"  formControlName="entidad">
   <label>Sucursal</label>
-  <input  name="sucursal" placeholder="sucursal" required minlength="4" formControlName="entidad">
+  <input  [(ngModel)]="sucursal" name="sucursal" placeholder="sucursal" formControlName="entidad">
   <label>DC</label>
-  <input  name="dc" placeholder="dc" required minlength="4" formControlName="dc">
+  <input  [(ngModel)]="dc" name="dc" placeholder="dc"  formControlName="dc">
   <label>Cuenta</label>
-  <input ngModel name="cuenta" placeholder="cuenta" required minlength="10" formControlName="cuenta">
+  <input [(ngModel)]="cuenta" name="cuenta" placeholder="cuenta" formControlName="cuenta">
   <button (click)="submit()">Enviar</button>
 </form>

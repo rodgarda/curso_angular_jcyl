@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder,  FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class DatosBancariosComponent implements OnInit {
     f: FormGroup;
     pais: string;
-    iban: string;
+    iban: number;
     entidad: number;
     sucursal: number;
     dc: number
@@ -22,8 +22,15 @@ export class DatosBancariosComponent implements OnInit {
 
   ngOnInit(): void {
     this.pais='ES'
-    this.iban='10'
+    this.iban=12;
+    this.entidad=1234;
+    this.sucursal=12;
+    this.dc=12;
+    this.cuenta=1234567890;
+
   }
+
+
   submit(){
     //console.log(f);
     //console.log(f.form.controls.cuenta.value)
