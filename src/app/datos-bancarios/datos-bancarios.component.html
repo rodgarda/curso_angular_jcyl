@@ -1,15 +1,15 @@
 <form  #f="ngForm" (ngSubmit)="submit(f)">
   <label>Pais</label>
-  <input ngModel name="pais" placeholder="pais">
+  <input ngModel name="pais" placeholder="pais" required minlength="2">
   <label>IBAN</label>
-  <input ngModel name="iban" placeholder="iban">
+  <input ngModel name="iban" placeholder="iban" required minlength="2">
   <label>Entidad</label>
-  <input ngModel name="entidad" placeholder="entidad">
+  <input ngModel name="entidad" placeholder="entidad" required minlength="2">
   <label>Sucursal</label>
-  <input ngModel name="sucursal" placeholder="sucursal">
+  <input ngModel name="sucursal" placeholder="sucursal" required minlength="4">
   <label>DC</label>
-  <input ngModel  name="dc" placeholder="dc">
+  <input ngModel  name="dc" placeholder="dc" required minlength="4">
   <label>Cuenta</label>
-  <input ngModel name="cuenta" placeholder="cuenta">
-  <button>Enviar</button>
+  <input ngModel name="cuenta" placeholder="cuenta" required minlength="10">
+  <button [disabled]="!f.valid">Enviar</button>
 </form>
