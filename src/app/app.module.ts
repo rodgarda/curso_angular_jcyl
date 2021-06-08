@@ -1,7 +1,7 @@
 import { SolicitudModuleModule } from './solicitud-module/solicitud-module.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CentroComponent } from './centro/centro.component';
@@ -24,7 +24,8 @@ import { DatosBancariosComponent } from './datos-bancarios/datos-bancarios.compo
     AppRoutingModule,
     HttpClientModule,
     SolicitudModuleModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [CentroComponent],
   providers: [],
