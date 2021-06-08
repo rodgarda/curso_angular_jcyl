@@ -1,16 +1,16 @@
 
-  <form [formGroup]="f">
+  <form [formGroup]="formBank">
   <label>Pais</label>
-  <input  [(ngModel)]="pais" name="pais" placeholder="pais" formControlName="pais">
+  <input name="pais" placeholder="pais" formControlName="pais">
   <label>IBAN</label>
-  <input  [(ngModel)]="iban" name="iban" placeholder="iban"  formControlName="iban">
+  <input name="iban" placeholder="iban"  formControlName="iban">
   <label>Entidad</label>
-  <input  [(ngModel)]="entidad" name="entidad" placeholder="entidad"  formControlName="entidad">
+  <input name="entidad" placeholder="entidad"  formControlName="entidad">
   <label>Sucursal</label>
-  <input  [(ngModel)]="sucursal" name="sucursal" placeholder="sucursal" formControlName="entidad">
+  <input name="sucursal" placeholder="sucursal" formControlName="entidad">
   <label>DC</label>
-  <input  [(ngModel)]="dc" name="dc" placeholder="dc"  formControlName="dc">
+  <input name="dc" placeholder="dc"  formControlName="dc">
   <label>Cuenta</label>
-  <input [(ngModel)]="cuenta" name="cuenta" placeholder="cuenta" formControlName="cuenta">
-  <button (click)="submit()">Enviar</button>
+  <input name="cuenta" placeholder="cuenta" formControlName="cuenta">
+  <button [disabled]="formBank.status=='INVALID'" (click)="submit()">Enviar</button>
 </form>

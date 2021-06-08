@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,  FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -9,33 +9,26 @@ import { FormBuilder,  FormGroup } from '@angular/forms';
   styleUrls: ['./datos-bancarios.component.css']
 })
 export class DatosBancariosComponent implements OnInit {
-    f: FormGroup;
-    pais: string;
-    iban: number;
-    entidad: number;
-    sucursal: number;
-    dc: number
-    cuenta: number;
+    formBank:FormGroup;
     constructor(private formsBuilder: FormBuilder) {
-      this.f = formsBuilder.group({ pais: '', iban: '' , entidad: '' , sucursal: '' , dc: '' , cuenta: '' });
+      this.formBank = formsBuilder.group({
+        pais: [ 'ES', [Validators.required, this.myArrobaValidator]],
+        iban: [ '12', [Validators.required, this.myArrobaValidator]],
+        entidad: [ '1234', [Validators.required, this.myArrobaValidator]],
+        sucursal: [ '1234', [Validators.required, this.myArrobaValidator]],
+        dc: [ '12', [Validators.required, this.myArrobaValidator]],
+        cuenta: [ '1234567890', [Validators.required, this.myArrobaValidator]],
+        });
     }
 
   ngOnInit(): void {
-    this.pais='ES'
-    this.iban=12;
-    this.entidad=1234;
-    this.sucursal=12;
-    this.dc=12;
-    this.cuenta=1234567890;
-
   }
 
+  myArrobaValidator(formControl: FormControl) {
+    return formControl.value.includes('@') ? { InvalidValue: true } : {};
+  }
 
   submit(){
-    //console.log(f);
-    //console.log(f.form.controls.cuenta.value)
-    console.log(this.f);
-    console.log(this.f.controls.cuenta.value);
-    console.log(this.pais);
+    console.log(this.formBank)
   }
 }
