@@ -1,7 +1,6 @@
 import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
 import { ConfiguracionComponent } from './configuracion/configuracion.component';
 import { LoginguardGuard } from './loginguard.guard';
-
 import { DatosBancariosComponent } from './datos-bancarios/datos-bancarios.component';
 import { ListadoCentrosComponent } from './listado-centros/listado-centros.component';
 import { NgModule } from '@angular/core';

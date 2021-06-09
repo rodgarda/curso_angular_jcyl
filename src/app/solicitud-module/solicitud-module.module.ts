@@ -1,5 +1,4 @@
 import { SolicitudRoutingModule } from './solicitud-routing.module';
-import { CentroComponent } from './../centro/centro.component';
 import { FilaSolicitudComponent } from './../fila-solicitud/fila-solicitud.component';
 import { SelectorCentroComponent } from './../selector-centro/selector-centro.component';
 import { NgModule } from '@angular/core';
