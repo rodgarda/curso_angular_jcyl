@@ -1,5 +1,7 @@
 import { SolicitudesService } from './../solicitudes.service';
 import {Component, OnInit} from '@angular/core';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+
 
 
 @Component({
@@ -50,5 +52,9 @@ export class SolicitudComponent implements OnInit {
       //this.solicitudes.splice( i, 1 );
   }
 
+  log($event: MatDatepickerInputEvent<unknown, unknown>) {
+    console.log($event)
+    console.log($event.value)
+  }
 
 }

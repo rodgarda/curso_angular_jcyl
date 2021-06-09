@@ -1,7 +1,7 @@
 <h1>Nueva solicitud de comedor</h1>
-<br/>
+
 <h2>Solicitudes</h2>
-<br/>
+<mat-grid-list cols="4">
     <h2>Nombre  Apellidos   F.Nacimiento Ayuda TipoSolicitud Acciones</h2>
   <table border="1">
     <thead>
@@ -18,23 +18,29 @@
         <app-fila-solicitud [solicitudFila]="solicit" (solicitudBorrada)="borrarSolicitud(solicit)"></app-fila-solicitud>
     </tr>
   </table>
-
+</mat-grid-list>
 <br/>
+<mat-grid-list cols="2" >
 <h2>Centro</h2>
-
 <app-selector-centro (asignaCentro)="recibeCentro($event)"></app-selector-centro>
-
 {{centro.nombre}}
+</mat-grid-list>
+<mat-grid-list cols="4">
 <h2>Nueva solicitud</h2>
-
 <label>Nombre</label>
 <input (keyup)="capturaInput($event, 'nombre')" [value]="solicitud.nombre">
 <div *ngIf="(solicitud?.nombre?.length || 0) < 3">
   Nombre demasiado corto
 </div>
-
 <label>Apellidos</label>
 <input (keyup)="capturaInput($event, 'apellidos')" [value]="solicitud.apellidos">
 
-<button (click)="enviar()" [disabled]="(solicitud?.nombre?.length<3 || 0)">Enviar</button>
 
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="date" (dateInput)="log($event)">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<button (click)="enviar()" [disabled]="(solicitud?.nombre?.length<3 || 0)">Enviar</button>
+</mat-grid-list>

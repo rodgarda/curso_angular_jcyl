@@ -4,12 +4,18 @@ import { SelectorCentroComponent } from './../selector-centro/selector-centro.co
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SolicitudComponent } from '../solicitud/solicitud.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
 @NgModule({
   declarations: [SolicitudComponent, SelectorCentroComponent, FilaSolicitudComponent],
- imports: [CommonModule],
-
+ imports: [CommonModule,
+          MatDatepickerModule, MatFormFieldModule, MatInputModule,MatNativeDateModule,MatGridListModule
+          ]
 })
 export class SolicitudModuleModule { }
