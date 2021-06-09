@@ -11,6 +11,8 @@ import { CentroDetalleComponent } from './centro-detalle/centro-detalle.componen
 import { DatosBancariosComponent } from './datos-bancarios/datos-bancarios.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
+import { ConfiguracionComponent } from './configuracion/configuracion.component';
+import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
 
 
 
@@ -21,7 +23,9 @@ import { MatListModule } from '@angular/material/list';
     ListadoCentrosComponent,
     CentroDetalleComponent,
     CentroComponent,
-    DatosBancariosComponent
+    DatosBancariosComponent,
+    ConfiguracionComponent,
+    NotauthorizedComponent
   ],
   imports: [
     BrowserModule,

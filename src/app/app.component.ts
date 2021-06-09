@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  linksMenu=[{name:'Solicitudes',url:'solicitud'},{name:'Listado de centros',url:'centros'},{name:'Datos Bancarios',url:'banco'}]
+  linksMenu=[{name:'Solicitudes',url:'solicitud'},{name:'Listado de centros',url:'centros'},{name:'Datos Bancarios',url:'banco'},{name:'Configuracion',url:'configuracion'}]
   title = 'solicitud';
 }

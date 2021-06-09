@@ -1,3 +1,6 @@
+import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
+import { ConfiguracionComponent } from './configuracion/configuracion.component';
+import { LoginguardGuard } from './loginguard.guard';
 
 import { DatosBancariosComponent } from './datos-bancarios/datos-bancarios.component';
 import { ListadoCentrosComponent } from './listado-centros/listado-centros.component';
@@ -10,11 +13,12 @@ import { CentroDetalleComponent } from './centro-detalle/centro-detalle.componen
 const routes: Routes = [
   {path: ''
  , component: SolicitudComponent},
-  {path: 'solicitud', component: SolicitudComponent},
-  {path: 'centros', component: ListadoCentrosComponent},
-  {path: 'banco', component: DatosBancariosComponent},
-
-   {path: 'centros/:centroId', component: CentroDetalleComponent},
+  {path: 'solicitud', component: SolicitudComponent,canActivate: [LoginguardGuard]},
+  {path: 'centros', component: ListadoCentrosComponent,canActivate: [LoginguardGuard]},
+  {path: 'banco', component: DatosBancariosComponent,canActivate: [LoginguardGuard]},
+   {path: 'centros/:centroId', component: CentroDetalleComponent,canActivate: [LoginguardGuard]},
+   {path: 'configuracion', component: ConfiguracionComponent,canActivate: [LoginguardGuard]},
+   {path: 'notauthorized', component: NotauthorizedComponent,canActivate: [LoginguardGuard]},
 ]
 
 
