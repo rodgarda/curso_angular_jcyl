@@ -1,7 +1,7 @@
-<a routerLink="solicitud">Solicitudes</a>
----
-<a routerLink="centros">Listado de centros</a>
----
-<a routerLink="banco">Datos Bancarios</a>
+<mat-nav-list class="verticalNav">
+  <mat-list-item *ngFor="let link of linksMenu">
+     <a matLine matLine class="verticalItem" [href]="link.url">{{ link.name }}</a>
+  </mat-list-item>
+</mat-nav-list>
 
 <router-outlet></router-outlet>

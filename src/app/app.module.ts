@@ -9,6 +9,12 @@ import {HttpClientModule} from "@angular/common/http";
 import { ListadoCentrosComponent } from './listado-centros/listado-centros.component';
 import { CentroDetalleComponent } from './centro-detalle/centro-detalle.component';
 import { DatosBancariosComponent } from './datos-bancarios/datos-bancarios.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatListModule } from '@angular/material/list';
+import { ConfiguracionComponent } from './configuracion/configuracion.component';
+import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
+
+
 
 
 @NgModule({
@@ -17,7 +23,9 @@ import { DatosBancariosComponent } from './datos-bancarios/datos-bancarios.compo
     ListadoCentrosComponent,
     CentroDetalleComponent,
     CentroComponent,
-    DatosBancariosComponent
+    DatosBancariosComponent,
+    ConfiguracionComponent,
+    NotauthorizedComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +33,9 @@ import { DatosBancariosComponent } from './datos-bancarios/datos-bancarios.compo
     HttpClientModule,
     SolicitudModuleModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatListModule
   ],
   exports: [CentroComponent],
   providers: [],

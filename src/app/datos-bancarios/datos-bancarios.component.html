@@ -12,6 +12,6 @@
   <input name="dc" placeholder="dc"  formControlName="dc">
   <label>Cuenta</label>
   <input name="cuenta" placeholder="cuenta" formControlName="cuenta">
-  <p *ngIf="formBank.status=='INVALID'" [ngStyle]="{color:'red'}">{{formBank.controls['pais'].errors | json}}</p>
+  <p *ngIf="formBank.invalid" [ngStyle]="{color:'red'}">{{formBank.controls['pais'].errors | json}}</p>
   <button [disabled]="formBank.status=='INVALID'" (click)="submit()">Enviar</button>
 </form>
