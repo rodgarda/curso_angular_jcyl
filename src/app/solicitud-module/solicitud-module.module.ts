@@ -1,22 +1,18 @@
+import { NgModule } from '@angular/core';
 import { SolicitudRoutingModule } from './solicitud-routing.module';
 import { FilaSolicitudComponent } from './../fila-solicitud/fila-solicitud.component';
 import { SelectorCentroComponent } from './../selector-centro/selector-centro.component';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { SolicitudComponent } from '../solicitud/solicitud.component';
-import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatInputModule} from "@angular/material/input";
-import {MatNativeDateModule} from "@angular/material/core";
-import {MatGridListModule} from '@angular/material/grid-list';
-
+import { SharedModule } from './../shared/shared.module';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
   declarations: [SolicitudComponent, SelectorCentroComponent, FilaSolicitudComponent],
- imports: [CommonModule,
-          MatDatepickerModule, MatFormFieldModule, MatInputModule,MatNativeDateModule,MatGridListModule,
-          SolicitudRoutingModule
+ imports: [
+          SharedModule,
+          SolicitudRoutingModule,
+          CommonModule
           ]
 })
 export class SolicitudModuleModule { }
