@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
 import { ConfiguracionComponent } from './configuracion/configuracion.component';
 import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -25,7 +26,8 @@ import { NotauthorizedComponent } from './notauthorized/notauthorized.component'
     CentroComponent,
     DatosBancariosComponent,
     ConfiguracionComponent,
-    NotauthorizedComponent
+    NotauthorizedComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,6 @@ import { NotauthorizedComponent } from './notauthorized/notauthorized.component'
     BrowserAnimationsModule,
     MatListModule
   ],
-  exports: [CentroComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
